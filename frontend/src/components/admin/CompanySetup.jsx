@@ -5,7 +5,6 @@ import Navbar from '../shared/Navbar'
 import { Button } from '../ui/button'
 import { Label } from '../ui/label'
 import { Input } from '../ui/input'
-import { COMPANY_API_END_POINT } from '@/utils/constant'
 import axios from 'axios'
 import { setLoading } from '@/redux/authSlice'
 import { useSelector } from 'react-redux'
@@ -55,7 +54,7 @@ const CompanySetup = () => {
        }
        try {
         setLoading(true);
-        const res = await axios.put(`${COMPANY_API_END_POINT}/update/${params.id}`,formData, {
+        const res = await axios.put(`https://jobportal-backend-8wn5.onrender.com/api/v1/company/update/${params.id}`,formData, {
             headers:{
                 'Content-Type': 'multipart/form-data'
             },

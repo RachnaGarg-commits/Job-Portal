@@ -14,7 +14,6 @@ import { Loader2 } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { toast } from "sonner";
-import { USER_API_END_POINT } from "@/utils/constant";
 import { setUser } from "@/redux/authSlice"; 
 
 const UpdateProfileDialog = ({ open, setOpen }) => {
@@ -72,7 +71,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
         formData.append("file", input.file);
       }
     
-      const res = await axios.post(`${USER_API_END_POINT}/profile/update`,
+      const res = await axios.post(`https://jobportal-backend-8wn5.onrender.com/api/v1/user/profile/update`,
         formData,
         {
           headers: {
